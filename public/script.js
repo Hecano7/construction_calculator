@@ -53,7 +53,7 @@ function constructionCalc() {
           .replace(`&`, `+`)
           .replace(`"`, ``);
         console.log(update.replace(`"`, ``).replace("++", "+"));
-        revaluated.push(update.replace(`"`, ``).replace("++", "+"));
+        revaluated.push(update.replace(`"`, ``).replace("++", "+").replace("+*", "*"));
 
         if (symbols[i] != undefined) {
           revaluated.push(symbols[i]);
