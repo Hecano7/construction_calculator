@@ -1,0 +1,12 @@
+{
+  "name": "construction_calculator",
+  "version": "1.0.0",
+  "description": "Calculator for construction use",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Hector Cano",
+  "license": "ISC"
+}

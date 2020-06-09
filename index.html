@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+        <title>Construction Calculator - Hector Cano</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="shortcut icon" href="img/calcfavicon.png" id="favicon">
+    </head>
+    <body>
+        <div id='calc-contain'>
+          <h1 style="text-align: center;">Construction Calculator</h1>
+          <form name="calculator">
+            
+            <input type="text" name="answer" />
+            <br>
+            <input type="button" value=" feet " style="background-color:rgb(56,113,147);color:white;font-weight: 500;" onclick="calculator.answer.value += `'`" />
+            <input type="button" value="inches " style="background-color:rgb(56,113,147);color:white;font-weight: 500;" onclick='calculator.answer.value += `"`' />
+            <input type="button" value=" & " style="background-color:rgb(56,113,147);color:white;" onclick="calculator.answer.value += '&'" />
+            <input type="button" value=" <= " style="background-color:rgb(73,88,101);color:white;" onclick="backSpace()" />
+            <br/>
+            
+            <input type="button" value=" 1 " onclick="calculator.answer.value += '1'" />
+            <input type="button" value=" 2 " onclick="calculator.answer.value += '2'" />
+            <input type="button" value=" 3 " onclick="calculator.answer.value += '3'" />
+            <input type="button" value=" + " style="background-color:rgb(76,92,99);color:white;" onclick="calculator.answer.value += '+'" />
+            </br>
+            
+            <input type="button" value=" 4 " onclick="calculator.answer.value += '4'" />
+            <input type="button" value=" 5 " onclick="calculator.answer.value += '5'" />
+            <input type="button" value=" 6 " onclick="calculator.answer.value += '6'" />
+            <input type="button" value=" - " style="background-color:rgb(76,92,99);color:white;" onclick="calculator.answer.value += '-'" />
+            </br>
+          
+            <input type="button" value=" 7 " onclick="calculator.answer.value += '7'" />
+            <input type="button" value=" 8 " onclick="calculator.answer.value += '8'" />
+            <input type="button" value=" 9 " onclick="calculator.answer.value += '9'" />
+            <input type="button" value=" x " style="background-color:rgb(76,92,99);color:white;" onclick="calculator.answer.value += '*'" />
+            </br>
+        
+            <input type="button" value=" On/C " style="background-color:rgb(207,47,59);color:white;" onclick="calculator.answer.value = ''" />
+            <input type="button" value=" 0 " onclick="calculator.answer.value += '0'" />
+            <input type="button" value=" . " onclick="calculator.answer.value += '.'"/>
+            <input type="button" value=" / " style="background-color:rgb(76,92,99);color:white;" onclick="calculator.answer.value += '/'"/>
+            </br>
+
+            <input type="button" value=" ( " style="background-color:rgb(56,113,147);color:white;" onclick="calculator.answer.value += '('" />
+            <input type="button" value=" ) " style="background-color:rgb(56,113,147);color:white;" onclick="calculator.answer.value += ')'"/>
+            <input type="button" value=" = " style="background-color:rgb(56,113,147);color:white;" onclick="constructionCalc()"/>
+            </br>
+  
+          </form>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
