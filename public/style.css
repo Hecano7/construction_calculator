@@ -1,6 +1,7 @@
 
 body{
   background-image: url("img/blueprint.jpg");
+  display: block;
 }
 #calc-contain{
   position: relative;
@@ -48,4 +49,10 @@ input[type = text] {
   font-size: 20px;
   padding: 10px;
   box-shadow: 4px 0px 12px black inset;
+}
+@media (max-width:430px){
+  #calc-contain{
+    padding: 5px 5px 100px 5px;
+  }
+  
 }

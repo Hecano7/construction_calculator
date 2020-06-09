@@ -52,8 +52,8 @@ function constructionCalc() {
           .replace(`'`, `*12+`)
           .replace(`&`, `+`)
           .replace(`"`, ``);
-        console.log(update.replace(`"`, ``));
-        revaluated.push(update.replace(`"`, ``));
+        console.log(update.replace(`"`, ``).replace("++", "+"));
+        revaluated.push(update.replace(`"`, ``).replace("++", "+"));
 
         if (symbols[i] != undefined) {
           revaluated.push(symbols[i]);
