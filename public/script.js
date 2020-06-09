@@ -70,27 +70,27 @@ function constructionCalc() {
     if (eval(revaluated.join("").replace("++", "+")) < 12) {
       if (fraction == "0/16") {
         console.log("1");
-        calculator.answer.value = `${inches}"`;
+        calculator.answer.value = `(${inches}")`;
       } else {
         console.log("2");
-        calculator.answer.value = `${inches}"&${fraction}"`;
+        calculator.answer.value = `(${inches}"&${fraction}")`;
       }
     } else {
       if (inches == 0) {
         if (fraction == "0/16") {
           console.log("3");
-          calculator.answer.value = `${feet}'`;
+          calculator.answer.value = `(${feet}')`;
         } else {
           console.log("4");
-          calculator.answer.value = `${feet}'&${fraction}"`;
+          calculator.answer.value = `(${feet}'&${fraction}")`;
         }
       } else {
         if (fraction == "0/16") {
           console.log("5");
-          calculator.answer.value = `${feet}'${inches}"`;
+          calculator.answer.value = `(${feet}'${inches}")`;
         } else {
           console.log("6");
-          calculator.answer.value = `${feet}' ${inches}&${fraction}"`;
+          calculator.answer.value = `(${feet}'${inches}&${fraction}")`;
         }
       }
     }
