@@ -68,20 +68,20 @@ function constructionCalc() {
     console.log((eval(revaluated.join("")) % 1).toFixed(2));
 
     if (eval(revaluated.join("").replace("++", "+")) < 12) {
-      if (fraction == 0) {
+      if (fraction == "0/16") {
         calculator.answer.value = `${inches}"`;
       } else {
         calculator.answer.value = `${inches}"${fraction}"`;
       }
     } else {
       if (inches == 0) {
-        if (fraction == 0) {
+        if (fraction == "0/16") {
           calculator.answer.value = `${feet}'`;
         } else {
           calculator.answer.value = `${feet}'&${fraction}"`;
         }
       } else {
-        if (fraction == 0) {
+        if (fraction == "0/16") {
           calculator.answer.value = `${feet}'${inches}"`;
         } else {
           calculator.answer.value = `${feet}' ${inches}&${fraction}"`;
