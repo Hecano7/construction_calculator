@@ -2,6 +2,7 @@
 body{
   background-image: url("img/blueprint.jpg");
   display: block;
+  margin: 0px;
 }
 h1{
   margin-top: 0px;
@@ -65,6 +66,9 @@ input[type = text] {
   box-shadow: 4px 0px 12px black inset;
 }
 @media (max-width:530px){
+  html{
+    float: left;
+  }
   #calc-contain{
     width: 98%;
     padding: 15px 5px 60px 5px;
