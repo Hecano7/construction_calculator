@@ -3,6 +3,10 @@ body{
   background-image: url("img/blueprint.jpg");
   display: block;
 }
+h1{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
 .disable-select {
   user-select: none; /* supported by Chrome and Opera */
  -webkit-user-select: none; /* Safari */
