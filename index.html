@@ -15,7 +15,7 @@
             <input type="text" name="answer" />
             <br>
             <input type="button" value="feet" style="background-color:rgb(56,113,147);color:white;font-weight: 500;" onclick="calculator.answer.value += `'`" />
-            <input type="button" value="inches" style="background-color:rgb(56,113,147);color:white;font-weight: 500;white-space: normal;" onclick='calculator.answer.value += `"`' />
+            <input type="button" value="inches" style="background-color:rgb(56,113,147);color:white;font-weight: 500;overflow-wrap: break-word;" onclick='calculator.answer.value += `"`' />
             <input type="button" value=" & " style="background-color:rgb(56,113,147);color:white;" onclick="calculator.answer.value += '&'" />
             <input type="button" value="<= " style="background-color:rgb(73,88,101);color:white;" onclick="backSpace()" />
             <br/>
@@ -38,7 +38,7 @@
             <input type="button" value=" x " style="background-color:rgb(76,92,99);color:white;" onclick="calculator.answer.value += '*'" />
             </br>
         
-            <input type="button" value="On/C" style="background-color:rgb(207,47,59);color:white;" onclick="calculator.answer.value = ''" />
+            <input type="button" value="On/C" style="background-color:rgb(207,47,59);color:white;overflow-wrap: break-word;" onclick="calculator.answer.value = ''" />
             <input type="button" value=" 0 " onclick="calculator.answer.value += '0'" />
             <input type="button" value=" . " onclick="calculator.answer.value += '.'"/>
             <input type="button" value=" / " style="background-color:rgb(76,92,99);color:white;" onclick="calculator.answer.value += '/'"/>
