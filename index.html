@@ -3,52 +3,53 @@
     <head>
         <title>Construction Calculator</title>
         <meta name="viewport" content="width=device-width, user-scalable=no">
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" media="screen and (min-device-width: 531px)" href="style.css" />
+        <link rel="stylesheet" media="screen and (max-device-width: 530px)" href="530.css" />
         <link rel="shortcut icon" href="img/calcfavicon.png" id="favicon">
     </head>
     <body>
         <div id='calc-contain' class="disable-dbl-tap-zoom">
-          <h1 style="text-align: center;color:rgb(233, 16, 1);">American</h1>
-          <h1 style="text-align: center;color:rgb(0, 0, 175)">Construction Calculator</h1>
           <form name="calculator">
             
-            <input type="text" name="answer" />
-            <br>
-            <input type="button" value="feet" style="background-color:rgb(56,113,147);color:white;font-weight: 500;" onclick="calculator.answer.value += `'`" />
-            <input type="button" value="inch" style="background-color:rgb(56,113,147);color:white;font-weight: 500;" onclick='calculator.answer.value += `"`' />
-            <input type="button" value=" & " style="background-color:rgb(56,113,147);color:white;" onclick="calculator.answer.value += '&'" />
-            <input type="button" value="<= " style="background-color:rgb(73,88,101);color:white;" onclick="backSpace()" />
-            <br/>
-            
-            <input type="button" value=" 1 " onclick="calculator.answer.value += '1'" />
-            <input type="button" value=" 2 " onclick="calculator.answer.value += '2'" />
-            <input type="button" value=" 3 " onclick="calculator.answer.value += '3'" />
-            <input type="button" value=" + " style="background-color:rgb(76,92,99);color:white;" onclick="calculator.answer.value += '+'" />
-            </br>
-            
-            <input type="button" value=" 4 " onclick="calculator.answer.value += '4'" />
-            <input type="button" value=" 5 " onclick="calculator.answer.value += '5'" />
-            <input type="button" value=" 6 " onclick="calculator.answer.value += '6'" />
-            <input type="button" value=" - " style="background-color:rgb(76,92,99);color:white;" onclick="calculator.answer.value += '-'" />
-            </br>
-          
-            <input type="button" value=" 7 " onclick="calculator.answer.value += '7'" />
-            <input type="button" value=" 8 " onclick="calculator.answer.value += '8'" />
-            <input type="button" value=" 9 " onclick="calculator.answer.value += '9'" />
-            <input type="button" value=" x " style="background-color:rgb(76,92,99);color:white;" onclick="calculator.answer.value += '*'" />
-            </br>
-        
-            <input type="button" value="On/C" style="background-color:rgb(207,47,59);color:white;overflow-wrap:auto;padding-left: 0%;" onclick="calculator.answer.value = ''" />
-            <input type="button" value=" 0 " onclick="calculator.answer.value += '0'" />
-            <input type="button" value=" . " onclick="calculator.answer.value += '.'"/>
-            <input type="button" value=" / " style="background-color:rgb(76,92,99);color:white;" onclick="calculator.answer.value += '/'"/>
-            </br>
+            <input type="text" name="answer" class="calculator-screen"/>
 
-            <input type="button" value=" ( " style="background-color:rgb(56,113,147);color:white;" onclick="calculator.answer.value += '('" />
-            <input type="button" value=" ) " style="background-color:rgb(56,113,147);color:white;" onclick="calculator.answer.value += ')'"/>
-            <input type="button" value=" = " style="background-color:rgb(56,113,147);color:white;" onclick="constructionCalc()"/>
-            </br>
-  
+            <div class="calculator-keys">
+            <!-- <br> -->
+            <input type="button" class="key , imperial" value="feet" onclick="calculator.answer.value += `'`" />
+            <input type="button" class="key , imperial" value="inch"  onclick='calculator.answer.value += `"`' />
+            <input type="button" class="key , blue" value=" & "  onclick="calculator.answer.value += '&'" />
+            <input type="button" class="key , grey" value="<="  onclick="backSpace()" />
+            <!-- <br/> -->
+            
+            <input type="button" class="key , digit" value=" 1 " onclick="calculator.answer.value += '1'" />
+            <input type="button" class="key , digit" value=" 2 " onclick="calculator.answer.value += '2'" />
+            <input type="button" class="key , digit" value=" 3 " onclick="calculator.answer.value += '3'" />
+            <input type="button" class="key , grey" value=" + "  onclick="calculator.answer.value += '+'" />
+            <!-- </br> -->
+            
+            <input type="button" class="key , digit" value=" 4 " onclick="calculator.answer.value += '4'" />
+            <input type="button" class="key , digit" value=" 5 " onclick="calculator.answer.value += '5'" />
+            <input type="button" class="key , digit" value=" 6 " onclick="calculator.answer.value += '6'" />
+            <input type="button" class="key , grey" value=" - " onclick="calculator.answer.value += '-'" />
+            <!-- </br> -->
+          
+            <input type="button" class="key , digit" value=" 7 " onclick="calculator.answer.value += '7'" />
+            <input type="button" class="key , digit" value=" 8 " onclick="calculator.answer.value += '8'" />
+            <input type="button" class="key , digit" value=" 9 " onclick="calculator.answer.value += '9'" />
+            <input type="button" class="key , grey" value=" x " onclick="calculator.answer.value += '*'" />
+            <!-- </br> -->
+        
+            <input type="button" class="key , clear" value="On/C" onclick="calculator.answer.value = ''" />
+            <input type="button" class="key , digit" value=" 0 " onclick="calculator.answer.value += '0'" />
+            <input type="button" class="key , digit" value=" . " onclick="calculator.answer.value += '.'"/>
+            <input type="button" class="key , grey" value=" / " onclick="calculator.answer.value += '/'"/>
+            <!-- </br> -->
+
+            <input type="button" class="key , blue" value=" ( " onclick="calculator.answer.value += '('" />
+            <input type="button" class="key , blue" value=" ) " onclick="calculator.answer.value += ')'"/>
+            <input type="button" class="key , blue , equal" value=" = " onclick="constructionCalc()"/>
+            <!-- </br> -->
+          </div>
           </form>
         </div>
         <script src="script.js"></script>

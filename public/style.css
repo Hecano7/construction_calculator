@@ -8,6 +8,28 @@ h1{
   margin-top: 0px;
   margin-bottom: 0px;
 }
+.imperial{
+  background-color:rgb(56,113,147);
+  color:white;
+  font-weight: 500;
+}
+.blue{
+  background-color:rgb(56,113,147);
+  color:white;
+}
+.grey{
+  background-color:rgb(73,88,101);
+  color:white;
+}
+.clear{
+  background-color:rgb(207,47,59);
+  color:white;
+  overflow-wrap:auto;
+  padding-left: 0%;
+}
+.digit{
+  background: lightGray;
+}
 .disable-select {
   user-select: none; /* supported by Chrome and Opera */
  -webkit-user-select: none; /* Safari */
@@ -23,8 +45,8 @@ h1{
   width: 350px;
   border: 2px solid black;
   border-radius: 12px;
-  margin: 0px auto;
-  padding: 20px 20px 100px 20px;
+  margin: 15% auto;
+  padding: 50px 20px 100px 20px;
   background-color: rgb(246,207,96);
 }
 #agh{
@@ -37,7 +59,6 @@ h1{
   font-weight: 900;
 }
 input[type=button] {
-  background: lightGray;
   width: 20%;
   font-size: 20px;
   font-weight: 900;
@@ -60,14 +81,8 @@ input[type = text] {
   display: block;
   width: 90%;
   height: 50px;
-  margin: 5px auto;
+  margin: 5px auto 25px;
   font-size: 20px;
   padding: 10px;
   box-shadow: 4px 0px 12px black inset;
-}
-@media (max-width:530px){
-  #calc-contain{
-    width: 98%;
-    padding: 15px 5px 60px 5px;
-  }
 }
