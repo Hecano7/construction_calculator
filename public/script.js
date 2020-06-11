@@ -90,7 +90,7 @@ function constructionCalc() {
           calculator.answer.value = `(${feet}'${inches}")`;
         } else {
           console.log("6");
-          calculator.answer.value = `(${feet}'${inches}&${fraction}")`;
+          calculator.answer.value = `(${feet}'${inches}"&${fraction}")`;
         }
       }
     }

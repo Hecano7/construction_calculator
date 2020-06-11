@@ -87,8 +87,10 @@ form{
 .blue{
   background-color: #2e86c0;
   color: #fff;
+  border-color: #2f1fdf;
 }
 .grey{
   background-color:rgb(73,88,101);
   color:white;
+  border-color: #3c3c3c;
 }
