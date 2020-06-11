@@ -81,13 +81,14 @@ form{
 }
 .imperial{
   background-color: #2e86c0;
+  border-color: #1f5cdf;
   color: #fff;
   font-weight: 500;
 }
 .blue{
   background-color: #2e86c0;
   color: #fff;
-  border-color: #2f1fdf;
+  border-color: #1f5cdf;
 }
 .grey{
   background-color:rgb(73,88,101);
