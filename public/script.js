@@ -24,42 +24,14 @@ function constructionCalc() {
   }
 
   if (value.includes(`'`) || value.includes(`"`) || value.includes(`&`)) {
-    if (value.includes(`+`) || value.includes(`-`)) {
-      const calc = value.replace("x", ",").replace("-", ",").replace("+", ",");
-
-      const split = calc.split(",");
-
-      for (var i = 0; i < split.length; i++) {
-        if (split[i].includes(`"`) || split[i].includes(`'`)) {
-          var update = split[i]
-            .replace(`'`, `*12+`)
-            .replace(`&`, `+`)
-            .replace(`"`, ``);
-
-          revaluated.push(update);
-
-          if (symbols[i] != undefined) {
-            revaluated.push(symbols[i]);
-          }
-        } else {
-          console.log("err: undefined value");
-          revaluated.push("!");
-        }
-      }
-    } else {
       console.log(value);
         var update = value
-          .replace(`'`, `*12+`)
-          .replace(`&`, `+`)
-          .replace(`"`, ``);
-        console.log(update.replace(`"`, ``).replace("++", "+"));
-        revaluated.push(update.replace(`"`, ``).replace("++", "+").replace("+*", "*"));
-
-        if (symbols[i] != undefined) {
-          revaluated.push(symbols[i]);
-        }
-      }
-    
+        .replace(/'/g, `*12+`)
+        .replace(/&/g, `+`)
+        .replace(/"/g, ``);
+        console.log(update.replace(/[+][+]/g, "+").replace(/[+][*]/g, "*").replace(/[+][/]/g, "/"));
+        revaluated.push(update.replace(/[+][+]/g, "+").replace(/[+][*]/g, "*").replace(/[+][/]/g, "/"));
+      
     console.log(Math.trunc((eval(revaluated.join("")) % 1).toFixed(3) / .0625));
     console.log(eval(revaluated.join("")));
     var fraction = `${Math.trunc((eval(revaluated.join("")) % 1).toFixed(3) / .0625)}/16`;
@@ -67,7 +39,7 @@ function constructionCalc() {
     var feet = Math.trunc(eval(revaluated.join("")) / 12);
     console.log((eval(revaluated.join("")) % 1).toFixed(2));
 
-    if (eval(revaluated.join("").replace("++", "+")) < 12) {
+    if (eval(revaluated.join("")) < 12) {
       if (fraction == "0/16") {
         console.log("1");
         calculator.answer.value = `(${inches}")`;
