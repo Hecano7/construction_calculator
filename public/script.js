@@ -28,9 +28,10 @@ function constructionCalc() {
         var update = value
         .replace(/'/g, `*12+`)
         .replace(/&/g, `+`)
-        .replace(/"/g, ``);
-        console.log(update.replace(/[+][+]/g, "+").replace(/[+][*]/g, "*").replace(/[+][/]/g, "/"));
-        revaluated.push(update.replace(/[+][+]/g, "+").replace(/[+][*]/g, "*").replace(/[+][/]/g, "/"));
+        .replace(/"/g, `+`);
+        console.log(value);
+        console.log(update.replace(/[+][+]/g, "+").replace(/[+][*]/g, "*").replace(/[+][/]/g, "/").replace(/[+][)]/g, ")").replace(/[+]$/g, ""));
+        revaluated.push(update.replace(/[+][+]/g, "+").replace(/[+][*]/g, "*").replace(/[+][/]/g, "/").replace(/[+][)]/g, ")").replace(/[+]$/g, ""));
       
     console.log(Math.trunc((eval(revaluated.join("")) % 1).toFixed(3) / .0625));
     console.log(eval(revaluated.join("")));
