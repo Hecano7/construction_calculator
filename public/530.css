@@ -38,7 +38,7 @@ body{
 .key {
   height: 100%;
   background-color: #fff;
-  border-radius: 3px;
+  /* border-radius: 3px; */
   border: 1px solid #c4c4c4;
   background-color: transparent;
   font-size: 2rem;
@@ -77,6 +77,10 @@ body{
   height: 80%;
 }
 form{
+  height: 100%;
+}
+.digit{
+  background: lightGray;
   height: 100%;
 }
 .imperial{

@@ -1,0 +1,194 @@
+* {box-sizing: border-box;}
+html{
+  height: 100%;
+}
+body{
+  height: 100%;
+  background-color: rgb(61, 197, 255);
+}
+#input{
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 75% 25%;
+  height: 45%;
+  padding: .5em;
+}
+#input > div {
+  display: grid;
+  grid-template-rows: 33% 33% 33%;
+  border-radius: 1em;
+  background-color: rgb(242,242,242);
+  padding: .3em;
+  border: 1px solid #000000;
+}
+.inputs{
+  width: 95%;
+  height: 50%;
+  margin-left: 2.5%;
+  grid-row-start: 3;
+  margin-top: 20%;
+  box-shadow: 2px 0px 6px black inset;
+}
+.calculate{
+  width: 90%;
+  height: 70%;
+  grid-row-start: 3;
+  border-radius: 1em;
+  box-shadow:inset 0px 1px 0px 0px #ffffff;
+  background-color:#ededed;
+  text-align: center;
+  display: inline-block;
+  font-size: 25px;
+  font-family: sans-serif;
+
+}
+p{
+  margin: 0;
+  text-align: center;
+}
+.Bars{
+  height: 2em;
+  width: 2em;
+  background-color: rgb(99, 254, 110);
+  margin: auto;
+  border: 1px solid #000000;
+}
+.Spaces{
+  height: 2em;
+  width: 2em;
+  background-color: rgb(202, 247, 255);
+  margin: auto;
+  border: 1px solid #000000;
+}
+.Frame{
+  height: 2em;
+  width: 2em;
+  background-color: rgb(189, 58, 58);
+  margin: auto;
+  border: 1px solid #000000;
+}
+.wrapper > div {
+    border: 1px solid #000000;
+    color: #000000;
+    /* resize: both; */
+    overflow: auto;
+    height: 100%;
+    background-color: rgb(202, 247, 255);
+}
+.wrapper {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 1.538%;
+  background-color: rgb(99, 254, 110);
+  height: 100%;
+}
+.frame{
+  padding: 3.076%;
+  background-color: rgb(189, 58, 58);
+  border: 1px solid #000000;
+  margin: 5%;
+  height: 80%;
+  position: absolute;
+  justify-content: center;
+  width: 90%;
+  /* top: 50%; */
+  /* transform: translateY(-50%); */
+}
+.bubble{
+  display: -moz-inline-grid;
+  margin-top: 1em;
+  position: relative;
+  background-color: rgb(242,242,242);
+  border-radius: 1em;
+  height: 40%;
+  border: 1px solid #000000;
+}
+.disable-dbl-tap-zoom {
+  touch-action: manipulation;
+}
+#calc-contain {
+  height: 54%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  position: absolute;
+  visibility: hidden;
+  z-index: -1;
+  width: 97%;
+}
+.calculator-screen {
+  width: 100%;
+  font-size: 2.5rem;
+  height: 20%;
+  border: none;
+  background-color: #252525;
+  color: #fff;
+  text-align: left;
+  padding-right: 10px;
+  padding-left: 10%;
+}
+.key {
+  height: 100%;
+  width: 100%;
+  border: 1px solid #c4c4c4;
+  background-color: transparent;
+  font-size: 2rem;
+  color: #333;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.05), inset 0 1px 0 0 rgba(255,255,255,.45), inset 0 -1px 0 0 rgba(255,255,255,.15), 0 1px 0 0 rgba(255,255,255,.15);
+  text-shadow: 0 1px rgba(255,255,255,.4);
+}
+.calculator-keys {
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+  grid-template-rows: 16.66% 16.66% 16.66% 16.66% 16.66% 16.66%;
+  height: 100%;
+}
+.clear {
+  background:linear-gradient(to bottom, #f4494f 5%, #f4494f 100%);
+  background-color: #f4494f;
+  border-color: #b0353a;
+  color: #fff;
+}
+.equal {
+  background-color: #2e86c0;
+  color: #fff;
+  grid-column-start: 3;
+  grid-column-end: 5;
+  width: 100%;
+}
+.equal:hover {
+  background-color: #4e9ed4;
+}
+.imperial{
+  background:linear-gradient(to bottom, #2e86c0 5%, #2e86c0 100%);
+  background-color: #2e86c0;
+  border-color: #1f5cdf;
+  color: #fff;
+  font-weight: 500;
+}
+.blue{
+  background:linear-gradient(to bottom, #2e86c0 5%, #2e86c0 100%);
+  background-color: #2e86c0;
+  color: #fff;
+  border-color: #1f5cdf;
+  padding: 0;
+}
+.grey{
+  background:linear-gradient(to bottom, rgb(73,88,101) 5%, rgb(73,88,101) 100%);
+  background-color:rgb(73,88,101);
+  color:white;
+  border-color: #3c3c3c;
+}
+.digit{
+	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+	background-color:#ededed;
+	border:1px solid #d6bcd6;
+	display:inline-block;
+	cursor:pointer;
+	padding:7px 25px;
+	text-decoration:none;
+}
+.radio{
+  visibility: hidden;
+  text-align: center;
+}
+      

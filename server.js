@@ -9,4 +9,8 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 
+app.get('/even-spaced', function(req, res) {
+    res.sendFile(path.join(__dirname + '/evenly-spaced.html'));
+});
+
 app.listen(PORT);
