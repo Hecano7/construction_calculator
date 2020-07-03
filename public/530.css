@@ -54,17 +54,14 @@ body{
   color: #337cac;
 }
 .clear {
-  background-color: #f0595f;
+  background:linear-gradient(to bottom, #f4494f 5%, #f4494f 100%);
   border-color: #b0353a;
   color: #fff;
-}
-.clear:hover {
-  background-color: #f17377;
 }
 .equal {
   background-color: #2e86c0;
   color: #fff;
-  grid-column-start: 3;
+  grid-column-start: 1;
   grid-column-end: 5;
   width: 100%;
 }
@@ -80,22 +77,25 @@ form{
   height: 100%;
 }
 .digit{
-  background: lightGray;
+  background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
   height: 100%;
 }
 .imperial{
-  background-color: #2e86c0;
+  background:linear-gradient(to bottom, #2e86c0 5%, #2e86c0 100%);
   border-color: #1f5cdf;
   color: #fff;
   font-weight: 500;
 }
 .blue{
-  background-color: #2e86c0;
+  background:linear-gradient(to bottom, #2e86c0 5%, #2e86c0 100%);
   color: #fff;
   border-color: #1f5cdf;
 }
 .grey{
-  background-color:rgb(73,88,101);
+  background:linear-gradient(to bottom, rgb(73,88,101) 5%, rgb(73,88,101) 100%);
   color:white;
   border-color: #3c3c3c;
+}
+.grey:hover {
+  background-color: rgb(98, 99, 101);
 }

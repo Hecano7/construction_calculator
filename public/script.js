@@ -1,76 +1,122 @@
+var display = document.getElementById('display').innerHTML;
+
 function backSpace() {
-  calculator.answer.value = calculator.answer.value.substring(0, calculator.answer.value.length - 1);
-}
+  document.getElementById('display').innerHTML = document.getElementById('display').innerHTML.substring(0, document.getElementById('display').innerHTML.length - 1);
+};
 
-function constructionCalc() {
-  const value = calculator.answer.value;
-  const revaluated = [];
-  var copy = value;
-  var symbols = [];
+var symbol = [];
+const values = [];
+var erase = false;
 
-  for (var i = 0; i < copy.length; i++) {
-    if (copy[i] == "+") {
-      symbols.push(copy[i]);
-    }
-    if (copy[i] == "-") {
-      symbols.push(copy[i]);
-    }
-    if (copy[i] == "*") {
-      symbols.push(copy[i]);
-    }
-    // if (copy[i] == "/") {
-    //   symbols.push(copy[i]);
-    // }
-  }
+function erased(){
+  if(erase == true){
+    document.getElementById('display').innerHTML = "";
+    erase = false;
+  };
+};
 
-  if (value.includes(`'`) || value.includes(`"`) || value.includes(`&`)) {
-      console.log(value);
-        var update = value
-        .replace(/'/g, `*12+`)
-        .replace(/&/g, `+`)
-        .replace(/"/g, `+`);
-        console.log(value);
-        console.log(update.replace(/[+][+]/g, "+").replace(/[+][*]/g, "*").replace(/[+][/]/g, "/").replace(/[+][)]/g, ")").replace(/[+]$/g, ""));
-        revaluated.push(update.replace(/[+][+]/g, "+").replace(/[+][*]/g, "*").replace(/[+][/]/g, "/").replace(/[+][)]/g, ")").replace(/[+]$/g, ""));
-      
-    console.log(Math.trunc((eval(revaluated.join("")) % 1).toFixed(3) / .0625));
-    console.log(eval(revaluated.join("")));
-    var fraction = `${Math.trunc((eval(revaluated.join("")) % 1).toFixed(3) / .0625)}/16`;
-    var inches = Math.trunc(eval(revaluated.join(""))) % 12;
-    var feet = Math.trunc(eval(revaluated.join("")) / 12);
-    console.log((eval(revaluated.join("")) % 1).toFixed(2));
+function fraction(x){
+  if(document.getElementById('display').innerHTML.includes('sup') && document.getElementById('display').innerHTML.includes('sub') == false){
+    console.log(1);
+    document.getElementById('display').innerHTML = `${document.getElementById('display').innerHTML}<sub>${x}</sub>`;
+    console.log(document.getElementById('display').innerHTML);
+  };
+  if(x == 'fraction'){
+    console.log(3);
+    document.getElementById('display').innerHTML = `${document.getElementById('display').innerHTML.substring(0, document.getElementById('display').innerHTML.length - 1)}<sup>${document.getElementById('display').innerHTML.charAt(document.getElementById('display').innerHTML.length - 1)}</sup>&frasl;`;
+    console.log(document.getElementById('display').innerHTML);
+  };
+  if(document.getElementById('display').innerHTML.includes('sup') == false && document.getElementById('display').innerHTML.includes('sub') == false){
+    document.getElementById('display').innerHTML += `${x}`;
+    console.log(2);
+    console.log(document.getElementById('display').innerHTML);
+  };
+};
 
-    if (eval(revaluated.join("")) < 12) {
-      if (fraction == "0/16") {
+function evaluateDisplay(){
+  var evaluated = eval(values.join("").replace(/[+]$/g, "").replace(/[-]$/g, "").replace(/[*]$/g, "").replace(/[/]$/g, ""));
+  console.log(evaluated);
+        var fraction = `<sup>${Math.trunc(((evaluated) % 1).toFixed(3) / .0625)}</sup>&frasl;<sub>16</sub>`;
+        var inches = Math.trunc(evaluated % 12) ;
+        var feet = Math.trunc(evaluated / 12) ;
+
+        console.log(feet);
+    if ((evaluated) < 12) {
+      if (Math.trunc(((evaluated) % 1).toFixed(3) / .0625) == 0) {
         console.log("1");
-        calculator.answer.value = `(${inches}")`;
+        document.getElementById('display').innerHTML = `${inches}"`;
       } else {
         console.log("2");
-        calculator.answer.value = `(${inches}"&${fraction}")`;
+        document.getElementById('display').innerHTML = `${inches}"${fraction}"`;
       }
     } else {
       if (inches == 0) {
-        if (fraction == "0/16") {
+        if (Math.trunc(((evaluated) % 1).toFixed(3) / .0625) == 0) {
           console.log("3");
-          calculator.answer.value = `(${feet}')`;
+          document.getElementById('display').innerHTML = `${feet}'`;
         } else {
           console.log("4");
-          calculator.answer.value = `(${feet}'&${fraction}")`;
+          document.getElementById('display').innerHTML = `${feet}'${fraction}"`;
         }
       } else {
-        if (fraction == "0/16") {
+        if (Math.trunc(((evaluated) % 1).toFixed(3) / .0625) == 0) {
           console.log("5");
-          calculator.answer.value = `(${feet}'${inches}")`;
+          document.getElementById('display').innerHTML = `${feet}'${inches}"`;
         } else {
           console.log("6");
-          calculator.answer.value = `(${feet}'${inches}"&${fraction}")`;
+          document.getElementById('display').innerHTML = `${feet}'${inches}"${fraction}"`;
         }
       }
     }
-  } else {
-    calculator.answer.value = eval(calculator.answer.value);
-  }
-  // console.log(Math.trunc(eval(revaluated.join(""))) % 12);
-}
-// 6649044331
-// onclick="calculator.answer.value = eval(calculator.answer.value)"
+};
+
+function constructionCalc(x) {
+  if(values.length == 3){
+    console.log("values length = 3");
+    values.splice(0, 2);
+  };
+
+        var update = document.getElementById('display').innerHTML
+        .replace(/'/g, `*12+`)
+        .replace(/"/g, `+`)
+        .replace(/[<][s][u][p][>]/g, `+`)
+        .replace(/[<][/][s][u][p][>]/g, ``)
+        .replace(/[<][s][u][b][>]/g, ``)
+        .replace(/[<][/][s][u][b][>]/g, ``)
+        .replace(/[⁄]/g, "/")
+        .replace(/[+][/]/g, "/")
+        .replace(/[+][*]/g, "*")
+        .replace(/[+][+]/g, "+")
+        .replace(/[+]$/g, "")
+        .replace(/"$/g, "")
+        .replace(/'$/g, "*12");
+
+    if(x == "symbols"){
+      if(values.length == 2){
+        console.log("3");
+        console.log(values.length);
+        values.push(`(${eval(update)})`);
+      };
+      if(values.length == 1){
+        console.log("2");
+        values.push(`${symbol}`);
+      };
+      if(values.length == 0){
+        console.log("1");
+        values.push(`(${eval(update)})`);
+        values.push(`${symbol}`);
+      };
+    }else{
+      if(values.length != 3){
+        values.push(`(${eval(update)})`);
+      }
+    };
+        console.log(values);
+        evaluateDisplay();
+};
+
+function symbols(x){
+  erase = true;
+  symbol = `${x}`;
+  constructionCalc("symbols");
+};

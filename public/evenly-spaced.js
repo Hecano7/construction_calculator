@@ -38,7 +38,7 @@ function next(){
     counter ++;
   }else{
     counter = 0;
-  }
+  };
   document.getElementById(select[counter]).focus();
   input_field = select[counter];
 };
