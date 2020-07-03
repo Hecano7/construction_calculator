@@ -47,7 +47,7 @@ function evaluateDisplay(){
         document.getElementById('display').innerHTML = `${inches}"`;
       } else {
         console.log("2");
-        document.getElementById('display').innerHTML = `${inches}"${fraction}"`;
+        document.getElementById('display').innerHTML = `${inches}${fraction}"`;
       }
     } else {
       if (inches == 0) {
@@ -64,7 +64,7 @@ function evaluateDisplay(){
           document.getElementById('display').innerHTML = `${feet}'${inches}"`;
         } else {
           console.log("6");
-          document.getElementById('display').innerHTML = `${feet}'${inches}"${fraction}"`;
+          document.getElementById('display').innerHTML = `${feet}'${inches}${fraction}"`;
         }
       }
     }
