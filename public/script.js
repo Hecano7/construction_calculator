@@ -10,7 +10,7 @@ function backSpace() {
 };
 
 var symbol = [];
-const values = [];
+var values = [];
 var erase = false;
 
 function erased(){
