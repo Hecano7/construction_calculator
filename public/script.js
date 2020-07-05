@@ -9,6 +9,7 @@ function backSpace() {
   console.log(document.getElementById('display').innerHTML);
 };
 
+var button = "inches";
 var symbol = [];
 var values = [];
 var erase = false;
@@ -39,14 +40,15 @@ function fraction(x){
 };
 
 function evaluateDisplay(){
-    var evaluated = eval(values.join("").replace(/[+]$/g, "").replace(/[-]$/g, "").replace(/[*]$/g, "").replace(/[/]$/g, ""));
-    console.log(evaluated);
-        var fraction = `<sup>${Math.trunc(((evaluated) % 1).toFixed(3) / .0625)}</sup>&frasl;<sub>16</sub>`;
-        var inches = Math.trunc(evaluated % 12) ;
-        var feet = Math.trunc(evaluated / 12) ;
+  var evaluated = eval(values.join("").replace(/[+]$/g, "").replace(/[-]$/g, "").replace(/[*]$/g, "").replace(/[/]$/g, ""));
+  console.log(evaluated);
+  var fraction = `<sup>${Math.trunc(((evaluated) % 1).toFixed(3) / .0625)}</sup>&frasl;<sub>16</sub>`;
+  var inches = Math.trunc(evaluated % 12) ;
+  var feet = Math.trunc(evaluated / 12) ;
 
         console.log(feet);
-    if ((evaluated) < 12) {
+  if(button == "feet"){
+      if ((evaluated) < 12) {
       if (Math.trunc(((evaluated) % 1).toFixed(3) / .0625) == 0) {
         console.log("1");
         document.getElementById('display').innerHTML = `${inches}"`;
@@ -73,6 +75,18 @@ function evaluateDisplay(){
         }
       }
     }
+  }
+  if(button == "inches"){
+      if ((evaluated) < 12) {
+      if (Math.trunc(((evaluated) % 1).toFixed(3) / .0625) == 0) {
+        console.log("1");
+        document.getElementById('display').innerHTML = `${inches}"`;
+      } else {
+        console.log("2");
+        document.getElementById('display').innerHTML = `${inches}${fraction}"`;
+      }
+    }
+  }
 };
 
 function constructionCalc(x) {
