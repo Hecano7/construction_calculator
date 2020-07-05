@@ -1,7 +1,12 @@
 var display = document.getElementById('display').innerHTML;
 
 function backSpace() {
-  document.getElementById('display').innerHTML = document.getElementById('display').innerHTML.substring(0, document.getElementById('display').innerHTML.length - 1);
+  if(document.getElementById('display').innerHTML.charAt(document.getElementById('display').innerHTML.length - 1) == "/"){
+
+  }else{
+    document.getElementById('display').innerHTML = document.getElementById('display').innerHTML.substring(0, document.getElementById('display').innerHTML.length - 1);
+  }
+  console.log(document.getElementById('display').innerHTML);
 };
 
 var symbol = [];
@@ -34,8 +39,8 @@ function fraction(x){
 };
 
 function evaluateDisplay(){
-  var evaluated = eval(values.join("").replace(/[+]$/g, "").replace(/[-]$/g, "").replace(/[*]$/g, "").replace(/[/]$/g, ""));
-  console.log(evaluated);
+    var evaluated = eval(values.join("").replace(/[+]$/g, "").replace(/[-]$/g, "").replace(/[*]$/g, "").replace(/[/]$/g, ""));
+    console.log(evaluated);
         var fraction = `<sup>${Math.trunc(((evaluated) % 1).toFixed(3) / .0625)}</sup>&frasl;<sub>16</sub>`;
         var inches = Math.trunc(evaluated % 12) ;
         var feet = Math.trunc(evaluated / 12) ;
