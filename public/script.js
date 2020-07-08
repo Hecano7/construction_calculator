@@ -77,17 +77,17 @@ function evaluateDisplay(){
     }
   }
   if(button == "inches"){
+    console.log(feet,inches,fraction);
+    console.log(evaluated);
       if ((evaluated) < 12) {
-      if (Math.trunc(((evaluated) % 1).toFixed(3) / .0625) == 0) {
         console.log("1");
         document.getElementById('display').innerHTML = `${inches}"`;
       } else {
         console.log("2");
-        document.getElementById('display').innerHTML = `${inches}${fraction}"`;
+        document.getElementById('display').innerHTML = `${Math.trunc(evaluated)}${fraction}"`;
       }
     }
-  }
-};
+  };
 
 function constructionCalc(x) {
   if(values.length == 3){
