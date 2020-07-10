@@ -79,7 +79,7 @@ function evaluateDisplay(){
   if(button == "inches"){
     console.log(feet,inches,fraction);
     console.log(evaluated);
-      if ((evaluated) < 12) {
+      if (fractions == `<sup>0</sup>&frasl;<sub>16</sub>`) {
         console.log("1");
         document.getElementById('display').innerHTML = `${inches}"`;
       } else {
