@@ -11,7 +11,12 @@
         <div id='calc-contain' class="disable-dbl-tap-zoom">
           <form name="calculator">
             <div type="text" name="answer" class="calculator-screen" id="display">
+              <div id="display-value">
+                <button id="inch">inch</button>
+              </br>
+                <button id="ft">ft</button>
               </div>
+            </div>
             <div class="calculator-keys">
             <!-- <br> -->
             <input type="button" class="key , imperial" value="feet" onclick="document.getElementById('display').innerHTML += `'`" />
@@ -40,7 +45,7 @@
         
             <input type="button" class="key , clear" value="On/C" onclick="document.getElementById('display').innerHTML = '';values = [];" />
             <input type="button" class="key , digit" value=" 0 " onclick="fraction(0)" />
-            <input type="button" class="key , digit" value=" . " onclick="document.getElementById('display').innerHTML += '.'"/>
+            <input type="button" class="key , digit" value=" . " onclick="erased();document.getElementById('display').innerHTML += '.';"/>
             <input type="button" class="key , grey" value="&#247" onclick="symbols('/')"/>
             <!-- </br> -->
 
