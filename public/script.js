@@ -79,9 +79,9 @@ function evaluateDisplay(){
   if(button == "inches"){
     console.log(feet,inches,fraction);
     console.log(evaluated);
-      if (fractions == `<sup>0</sup>&frasl;<sub>16</sub>`) {
+      if (fraction == `<sup>0</sup>&frasl;<sub>16</sub>`) {
         console.log("1");
-        document.getElementById('display').innerHTML = `${inches}"`;
+        document.getElementById('display').innerHTML = `${Math.trunc(evaluated)}"`;
       } else {
         console.log("2");
         document.getElementById('display').innerHTML = `${Math.trunc(evaluated)}${fraction}"`;
