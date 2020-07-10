@@ -21,6 +21,24 @@ function erased(){
   };
 };
 
+function simplify(str) { 
+  var result = '', data = str.split('/'),  
+      numOne = Number(data[0]),  
+      numTwo = Number(data[1]); 
+  for (var i = Math.max(numOne, numTwo); i > 1; i--) { 
+  if ((numOne % i == 0) && (numTwo % i == 0)) { 
+      numOne /= i; 
+      numTwo /= i; 
+  } 
+  } 
+  if (numTwo === 1) { 
+  result = numOne.toString() 
+  } else { 
+  result = `<sup>${numOne.toString()}</sup>&frasl;<sub>${numTwo.toString()}</sub>`
+  } 
+  return result 
+}; 
+
 function fraction(x){
   if(document.getElementById('display').innerHTML.includes('sup') && document.getElementById('display').innerHTML.includes('sub') == false){
     console.log(1);
@@ -42,7 +60,7 @@ function fraction(x){
 function evaluateDisplay(){
   var evaluated = eval(values.join("").replace(/[+]$/g, "").replace(/[-]$/g, "").replace(/[*]$/g, "").replace(/[/]$/g, ""));
   console.log(evaluated);
-  var fraction = `<sup>${Math.trunc(((evaluated) % 1).toFixed(3) / .0625)}</sup>&frasl;<sub>16</sub>`;
+  var fraction = simplify(`${Math.trunc(((evaluated) % 1).toFixed(3) / .0625)}/16`);
   var inches = Math.trunc(evaluated % 12) ;
   var feet = Math.trunc(evaluated / 12) ;
 
@@ -79,7 +97,7 @@ function evaluateDisplay(){
   if(button == "inches"){
     console.log(feet,inches,fraction);
     console.log(evaluated);
-      if (fraction == `<sup>0</sup>&frasl;<sub>16</sub>`) {
+      if (fraction == `0`) {
         console.log("1");
         document.getElementById('display').innerHTML = `${Math.trunc(evaluated)}"`;
       } else {
