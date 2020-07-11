@@ -24,6 +24,8 @@ body{
   width: 100%;
 }
 .calculator-screen {
+  display: grid;
+  grid-template-columns: 81% 19%;
   font-family: Arial, Helvetica, sans-serif;
   width: 100%;
   font-size: 3.5rem;
@@ -32,7 +34,23 @@ body{
   background-color: #252525;
   color: #fff;
   text-align: center;
+}
+.display-screen {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 3.5rem;
+  border: none;
+  background-color: #252525;
+  color: #fff;
+  text-align: center;
   padding-top: 10%;
+}
+#display-value{
+  float: right;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  margin-top: -10%;
+  height: 98%;
+  padding-top: 12%;
 }
 .key {
   height: 100%;
@@ -75,22 +93,6 @@ body{
 }
 form{
   height: 100%;
-}
-#display-value{
-  float: right;
-  margin-top: -10%;
-  height: 100%;
-  width: 25%;
-}
-#inch{
-  float: right;
-  height: 50%;
-  width: 50%;
-}
-#ft{
-  float: right;
-  height: 50%;
-  width: 50%;
 }
 .digit{
   background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);

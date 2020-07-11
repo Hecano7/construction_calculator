@@ -1,3 +1,5 @@
+
+
 var display = document.getElementById('display').innerHTML;
 
 function backSpace() {
@@ -9,10 +11,16 @@ function backSpace() {
   console.log(document.getElementById('display').innerHTML);
 };
 
-var button = "inches";
+var convert = "inches";
 var symbol = [];
 var values = [];
 var erase = false;
+
+function converting(x){
+ convert = x;
+ values = [];
+ constructionCalc();
+};
 
 function erased(){
   if(erase == true){
@@ -65,7 +73,7 @@ function evaluateDisplay(){
   var feet = Math.trunc(evaluated / 12) ;
 
         console.log(feet);
-  if(button == "feet"){
+  if(convert == "feet"){
       if ((evaluated) < 12) {
       if (Math.trunc(((evaluated) % 1).toFixed(3) / .0625) == 0) {
         console.log("1");
@@ -94,7 +102,7 @@ function evaluateDisplay(){
       }
     }
   }
-  if(button == "inches"){
+  if(convert == "inches"){
     console.log(feet,inches,fraction);
     console.log(evaluated);
       if (fraction == `0`) {
@@ -105,7 +113,11 @@ function evaluateDisplay(){
         document.getElementById('display').innerHTML = `${Math.trunc(evaluated)}${fraction}"`;
       }
     }
+  if(convert == "decimal"){
+    console.log(evaluated);
+        document.getElementById('display').innerHTML = `${evaluated}`;
   };
+}
 
 function constructionCalc(x) {
   if(values.length == 3){

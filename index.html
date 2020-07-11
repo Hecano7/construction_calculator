@@ -10,11 +10,13 @@
     <body>
         <div id='calc-contain' class="disable-dbl-tap-zoom">
           <form name="calculator">
-            <div type="text" name="answer" class="calculator-screen" id="display">
+            <div class="calculator-screen">
+            <div type="text" name="answer" class="display-screen" id="display">
+            </div>
               <div id="display-value">
-                <button id="inch">inch</button>
-              </br>
-                <button id="ft">ft</button>
+                <button type="button" id="inch" onclick="converting('inches')">inch</button>
+                <button type="button" id="ft" onclick="converting('feet')">ft</button>
+                <button type="button" id="dec" onclick="converting('decimal')">dec</button>
               </div>
             </div>
             <div class="calculator-keys">
