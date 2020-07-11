@@ -29,7 +29,7 @@ body{
   font-family: Arial, Helvetica, sans-serif;
   width: 100%;
   font-size: 3.5rem;
-  height: 20%;
+  height: 22%;
   border: none;
   background-color: #252525;
   color: #fff;
@@ -42,7 +42,7 @@ body{
   background-color: #252525;
   color: #fff;
   text-align: center;
-  padding-top: 10%;
+  padding-top: 9%;
 }
 #display-value{
   float: right;
