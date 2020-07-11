@@ -169,3 +169,10 @@ function symbols(x){
   symbol = `${x}`;
   constructionCalc("symbols");
 };
+
+function radio(x){
+  document.getElementById("inch").className = "digit";
+  document.getElementById("ft").className = "digit";
+  document.getElementById("dec").className = "digit";
+  document.getElementById(x).className = "highlight";
+}
