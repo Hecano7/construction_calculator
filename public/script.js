@@ -67,7 +67,12 @@ function fraction(x){
 
 function evaluateDisplay(){
   var evaluated = eval(values.join("").replace(/[+]$/g, "").replace(/[-]$/g, "").replace(/[*]$/g, "").replace(/[/]$/g, ""));
-  console.log(evaluated);
+  if(values.length == 3){
+    values = [];
+    values.push(`(${evaluated})`);
+    values.push(symbol);
+    console.log(values);
+  };
   var fraction = simplify(`${Math.trunc(((evaluated) % 1).toFixed(3) / .0625)}/16`);
   var inches = Math.trunc(evaluated % 12) ;
   var feet = Math.trunc(evaluated / 12) ;
@@ -121,11 +126,7 @@ function evaluateDisplay(){
 
 function constructionCalc(x) {
   console.log(document.getElementById('display').innerHTML.length);
-if(document.getElementById('display').innerHTML.length != 13){  
-  if(values.length == 3){
-    console.log("values length = 3");
-    values.splice(0, 2);
-  };
+if(document.getElementById('display').innerHTML.length != 0){  
 
         var update = document.getElementById('display').innerHTML
         .replace(/'/g, `*12+`)
