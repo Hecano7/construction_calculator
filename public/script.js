@@ -34,10 +34,10 @@ function simplify(str) {
       numOne = Number(data[0]),  
       numTwo = Number(data[1]); 
   for (var i = Math.max(numOne, numTwo); i > 1; i--) { 
-  if ((numOne % i == 0) && (numTwo % i == 0)) { 
-      numOne /= i; 
-      numTwo /= i; 
-  } 
+    if ((numOne % i == 0) && (numTwo % i == 0)) { 
+        numOne /= i; 
+        numTwo /= i; 
+    } 
   } 
   if (numTwo === 1) { 
   result = numOne.toString() 
@@ -120,6 +120,8 @@ function evaluateDisplay(){
 }
 
 function constructionCalc(x) {
+  console.log(document.getElementById('display').innerHTML.length);
+if(document.getElementById('display').innerHTML.length != 13){  
   if(values.length == 3){
     console.log("values length = 3");
     values.splice(0, 2);
@@ -162,6 +164,7 @@ function constructionCalc(x) {
     };
         console.log(values);
         evaluateDisplay();
+}else{console.log("hello")}
 };
 
 function symbols(x){
