@@ -80,6 +80,7 @@ body{
   color: #fff;
   grid-column-start: 1;
   grid-column-end: 5;
+  font-weight: 500;
 }
 .equal:hover {
   background-color: #4e9ed4;
