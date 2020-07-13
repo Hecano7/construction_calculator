@@ -145,16 +145,12 @@ if(document.getElementById('display').innerHTML.length != 0){
 
     if(x == "symbols"){
       if(values.length == 2){
-        console.log("3");
-        console.log(values.length);
-        values.push(`(${eval(update)})`);
+        values.splice(1, 1,`${symbol}`);
       };
       if(values.length == 1){
-        console.log("2");
         values.push(`${symbol}`);
       };
       if(values.length == 0){
-        console.log("1");
         values.push(`(${eval(update)})`);
         values.push(`${symbol}`);
       };
