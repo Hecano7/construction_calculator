@@ -1,6 +1,7 @@
 
 
 var display = document.getElementById('display').innerHTML;
+document.getElementById('display').innerHTML = "";
 
 function backSpace() {
   if(document.getElementById('display').innerHTML.charAt(document.getElementById('display').innerHTML.length - 1) == "/"){
@@ -11,6 +12,7 @@ function backSpace() {
   console.log(document.getElementById('display').innerHTML);
 };
 
+var operator = "";
 var convert = "inches";
 var symbol = [];
 var values = [];
@@ -23,6 +25,8 @@ function converting(x){
 };
 
 function erased(){
+    operator = "";
+    console.log(operator);
   if(erase == true){
     document.getElementById('display').innerHTML = "";
     erase = false;
@@ -49,19 +53,15 @@ function simplify(str) {
 
 function fraction(x){
   if(document.getElementById('display').innerHTML.includes('sup') && document.getElementById('display').innerHTML.includes('sub') == false){
-    console.log(1);
     document.getElementById('display').innerHTML = `${document.getElementById('display').innerHTML}<sub>${x}</sub>`;
     console.log(document.getElementById('display').innerHTML);
   };
   if(x == 'fraction'){
-    console.log(3);
     document.getElementById('display').innerHTML = `${document.getElementById('display').innerHTML.substring(0, document.getElementById('display').innerHTML.length - 1)}<sup>${document.getElementById('display').innerHTML.charAt(document.getElementById('display').innerHTML.length - 1)}</sup>&frasl;`;
     console.log(document.getElementById('display').innerHTML);
   };
   if(document.getElementById('display').innerHTML.includes('sup') == false && document.getElementById('display').innerHTML.includes('sub') == false){
     document.getElementById('display').innerHTML += `${x}`;
-    console.log(2);
-    console.log(document.getElementById('display').innerHTML);
   };
 };
 
@@ -77,7 +77,6 @@ function evaluateDisplay(){
   var inches = Math.trunc(evaluated % 12) ;
   var feet = Math.trunc(evaluated / 12) ;
 
-        console.log(feet);
   if(convert == "feet"){
       if ((evaluated) < 12) {
       if (Math.trunc(((evaluated) % 1).toFixed(3) / .0625) == 0) {
@@ -111,10 +110,8 @@ function evaluateDisplay(){
     console.log(feet,inches,fraction);
     console.log(evaluated);
       if (fraction == `0`) {
-        console.log("1");
         document.getElementById('display').innerHTML = `${Math.trunc(evaluated)}"`;
       } else {
-        console.log("2");
         document.getElementById('display').innerHTML = `${Math.trunc(evaluated)}${fraction}"`;
       }
     }
@@ -145,7 +142,13 @@ if(document.getElementById('display').innerHTML.length != 0){
 
     if(x == "symbols"){
       if(values.length == 2){
-        values.splice(1, 1,`${symbol}`);
+        console.log(values.length);
+        if(operator == "hit"){
+          values.splice(1, 1, symbol);
+        }
+        if(operator == ""){
+          values.push(`(${eval(update)})`);
+        }
       };
       if(values.length == 1){
         values.push(`${symbol}`);
@@ -165,9 +168,11 @@ if(document.getElementById('display').innerHTML.length != 0){
 };
 
 function symbols(x){
+  console.log(operator);
   erase = true;
   symbol = `${x}`;
   constructionCalc("symbols");
+  operator = "hit";
 };
 
 function radio(x){
