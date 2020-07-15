@@ -61,15 +61,16 @@ function simplify(str) {
 }; 
 
 function fraction(x){
-  if(document.getElementById('display').innerHTML.includes('sup') && document.getElementById('display').innerHTML.includes('sub') == false){
+  if((document.getElementById('display').innerHTML.includes('sup') == true) && (document.getElementById('display').innerHTML.includes('sub') == false && x != 'fraction')){
     document.getElementById('display').innerHTML = `${document.getElementById('display').innerHTML}<sub>${x}</sub>`;
-    console.log(document.getElementById('display').innerHTML);
+    console.log(1);
   };
-  if(x == 'fraction'){
+  if(x == 'fraction' && document.getElementById('display').innerHTML.charAt(document.getElementById('display').innerHTML.length - 1) != ">" && document.getElementById('display').innerHTML.charAt(document.getElementById('display').innerHTML.length - 3) != "p"){
+    console.log(2);
     document.getElementById('display').innerHTML = `${document.getElementById('display').innerHTML.substring(0, document.getElementById('display').innerHTML.length - 1)}<sup>${document.getElementById('display').innerHTML.charAt(document.getElementById('display').innerHTML.length - 1)}</sup>&frasl;`;
-    console.log(document.getElementById('display').innerHTML);
   };
   if(document.getElementById('display').innerHTML.includes('sup') == false && document.getElementById('display').innerHTML.includes('sub') == false){
+    console.log(3);
     document.getElementById('display').innerHTML += `${x}`;
   };
 };
