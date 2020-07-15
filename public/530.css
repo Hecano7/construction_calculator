@@ -48,7 +48,7 @@ body{
   float: right;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
-  margin-top: -10%;
+  margin-top: -12%;
   height: 98%;
   padding-top: 12%;
 }
