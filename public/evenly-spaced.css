@@ -10,7 +10,7 @@ body{
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
   grid-template-rows: 75% 25%;
-  height: 45%;
+  height: 55%;
   padding: .5em;
 }
 #input > div {
@@ -96,7 +96,6 @@ p{
 }
 .bubble{
   display: -moz-inline-grid;
-  margin-top: 1em;
   position: relative;
   background-color: rgb(242,242,242);
   border-radius: 1em;
