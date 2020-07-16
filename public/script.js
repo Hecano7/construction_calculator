@@ -7,8 +7,17 @@ function backSpace() {
   if(document.getElementById('display').innerHTML.charAt(document.getElementById('display').innerHTML.length - 1) == ">" || document.getElementById('display').innerHTML.charAt(document.getElementById('display').innerHTML.length - 3) == "p"){
     console.log(document.getElementById('display').innerHTML.charAt(document.getElementById('display').innerHTML.length - 1));
     if(document.getElementById('display').innerHTML.charAt(document.getElementById('display').innerHTML.length - 1) == ">"){
+      if(document.getElementById('display').innerHTML.charAt(document.getElementById('display').innerHTML.length - 7) == ">"){
       document.getElementById('display').innerHTML = document.getElementById('display').innerHTML.substring(0, document.getElementById('display').innerHTML.length - 12);
       console.log("number: 1");
+      }else{
+        var display = document.getElementById('display').innerHTML.split("");
+        display.splice(document.getElementById('display').innerHTML.length - 7, 1);
+          console.log("number: 1");
+        console.log(document.getElementById('display').innerHTML);
+        document.getElementById('display').innerHTML = display.join("");
+  
+      }
     }else{
       console.log("number: 2");
       let number = document.getElementById('display').innerHTML.charAt(document.getElementById('display').innerHTML.length - 8);
@@ -66,10 +75,7 @@ function fraction(x){
     var display = document.getElementById('display').innerHTML.split("");
     display.splice(document.getElementById('display').innerHTML.length - 14, 1);
     display.splice(document.getElementById('display').innerHTML.length - 9, 0, character);
-    console.log(display.join(""));
-    console.log(character);
     if(character != "<" ){
-      console.log(character);
     document.getElementById('display').innerHTML = display.join("");
     }
   };
@@ -87,7 +93,6 @@ function fraction(x){
   if((document.getElementById('display').innerHTML.includes('sup') == false) && (document.getElementById('display').innerHTML.includes('sub') == false) && (x != 'fraction')){
     document.getElementById('display').innerHTML += `${x}`;
   };
-  console.log(document.getElementById('display').innerHTML);
 };
 
 function evaluateDisplay(){
