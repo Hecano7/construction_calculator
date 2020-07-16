@@ -48,8 +48,6 @@ function spacedWidth(space){
   var inches = Math.trunc(space) % 12;
   var feet = Math.trunc(space / 12);
 
-  console.log(Math.trunc((space % 1).toFixed(3) / .0625));
-
   if (space < 12) {
     if (fraction == "0/16") {
       alert(`${inches}"`);
@@ -84,7 +82,6 @@ function calculate(x){
   var input3 = eval(document.getElementById("Spaces").value.replace(/'/g, `*12+`).replace(/"/g, `+`).replace(/[+][+]/g, "+").replace(/[+][*]/g, "*").replace(/[+][/]/g, "/").replace(/[+][)]/g, ")").replace(/[+]$/g, ""));
   var input4 = eval(document.getElementById("Frame").value.replace(/'/g, `*12+`).replace(/"/g, `+`).replace(/[+][+]/g, "+").replace(/[+][*]/g, "*").replace(/[+][/]/g, "/").replace(/[+][)]/g, ")").replace(/[+]$/g, ""));
 
-  console.log(input3);
   var bars = (input1 / (input3 + (input2 / 2))) - 1;
 
   var barsSecondOption = 0;
@@ -131,6 +128,7 @@ function calculate(x){
             console.log(selectedValue);
             radio = parseInt(selectedValue);
   }else{
+    radio = bars * input2;
     document.getElementsByClassName("radio")[0].style.visibility = "hidden";
   };
 
@@ -147,7 +145,8 @@ function calculate(x){
     gaps.appendChild(innerDiv);
   }
   
-  var space = (input1 - radio) / (radio + 1);
+  var space = (input1 - radio * input2) / (radio + 1);
+  console.log(space);
   spacedWidth(space);
 }
 
