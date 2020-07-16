@@ -16,19 +16,25 @@ function backSpace() {
           console.log("number: 2");
         console.log(document.getElementById('display').innerHTML);
         document.getElementById('display').innerHTML = display.join("");
-  
       }
     }else{
       console.log("number: 3");
       let number = document.getElementById('display').innerHTML.charAt(document.getElementById('display').innerHTML.length - 8);
-      if(number != "<"){
-        console.log(document.getElementById('display').innerHTML);
+      console.log(number);
+      if((document.getElementById('display').innerHTML.charAt(document.getElementById('display').innerHTML.length - 10) != ">")){
+        console.log(document.getElementById('display').innerHTML.charAt(document.getElementById('display').innerHTML.length - 10));
         document.getElementById('display').innerHTML = document.getElementById('display').innerHTML.substring(0, document.getElementById('display').innerHTML.length - 13);
     }else{
       console.log(document.getElementById('display').innerHTML);
-      number = document.getElementById('display').innerHTML.charAt(document.getElementById('display').innerHTML.length - 9);
+      // number = document.getElementById('display').innerHTML.charAt(document.getElementById('display').innerHTML.length - 8);
+      // console.log(number);
+      // document.getElementById('display').innerHTML = document.getElementById('display').innerHTML.substring(0, document.getElementById('display').innerHTML.length - 13);
+
+      var display = document.getElementById('display').innerHTML.split("");
+      var digit = display.splice(document.getElementById('display').innerHTML.length - 9, 2);
+      document.getElementById('display').innerHTML = document.getElementById('display').innerHTML.substring(0, document.getElementById('display').innerHTML.length - 14);
+      number = digit.join("");
       console.log(number);
-      document.getElementById('display').innerHTML = document.getElementById('display').innerHTML.substring(0, document.getElementById('display').innerHTML.length - 13);
     }
       document.getElementById('display').innerHTML += number;
     };
