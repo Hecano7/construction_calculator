@@ -145,7 +145,10 @@ function calculate(x){
     gaps.appendChild(innerDiv);
   }
   
-  var space = (input1 - radio * input2) / (radio + 1);
+  var space = (input1 - (radio * input2)) / (radio + 1);
+  console.log(input1);
+  console.log(radio);
+  console.log(input2);
   console.log(space);
   spacedWidth(space);
 }

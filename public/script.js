@@ -5,27 +5,35 @@ document.getElementById('display').innerHTML = "";
 
 function backSpace() {
   if(document.getElementById('display').innerHTML.charAt(document.getElementById('display').innerHTML.length - 1) == ">" || document.getElementById('display').innerHTML.charAt(document.getElementById('display').innerHTML.length - 3) == "p"){
-    console.log(document.getElementById('display').innerHTML.charAt(document.getElementById('display').innerHTML.length - 1));
+    console.log(document.getElementById('display').innerHTML.charAt(document.getElementById('display').innerHTML.length - 8));
     if(document.getElementById('display').innerHTML.charAt(document.getElementById('display').innerHTML.length - 1) == ">"){
-      if(document.getElementById('display').innerHTML.charAt(document.getElementById('display').innerHTML.length - 7) == ">"){
+      if(document.getElementById('display').innerHTML.charAt(document.getElementById('display').innerHTML.length - 8) == ">"){
       document.getElementById('display').innerHTML = document.getElementById('display').innerHTML.substring(0, document.getElementById('display').innerHTML.length - 12);
       console.log("number: 1");
       }else{
         var display = document.getElementById('display').innerHTML.split("");
         display.splice(document.getElementById('display').innerHTML.length - 7, 1);
-          console.log("number: 1");
+          console.log("number: 2");
         console.log(document.getElementById('display').innerHTML);
         document.getElementById('display').innerHTML = display.join("");
   
       }
     }else{
-      console.log("number: 2");
+      console.log("number: 3");
       let number = document.getElementById('display').innerHTML.charAt(document.getElementById('display').innerHTML.length - 8);
+      if(number != "<"){
+        console.log(document.getElementById('display').innerHTML);
+        document.getElementById('display').innerHTML = document.getElementById('display').innerHTML.substring(0, document.getElementById('display').innerHTML.length - 13);
+    }else{
+      console.log(document.getElementById('display').innerHTML);
+      number = document.getElementById('display').innerHTML.charAt(document.getElementById('display').innerHTML.length - 9);
+      console.log(number);
       document.getElementById('display').innerHTML = document.getElementById('display').innerHTML.substring(0, document.getElementById('display').innerHTML.length - 13);
+    }
       document.getElementById('display').innerHTML += number;
     };
   }else{
-    console.log("number: 3");
+    console.log("number: 4");
     document.getElementById('display').innerHTML = document.getElementById('display').innerHTML.substring(0, document.getElementById('display').innerHTML.length - 1);
   }
 };
