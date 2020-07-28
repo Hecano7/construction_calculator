@@ -25,17 +25,11 @@ function backSpace() {
         console.log(document.getElementById('display').innerHTML.charAt(document.getElementById('display').innerHTML.length - 10));
         document.getElementById('display').innerHTML = document.getElementById('display').innerHTML.substring(0, document.getElementById('display').innerHTML.length - 13);
     }else{
-      console.log(document.getElementById('display').innerHTML);
-      // number = document.getElementById('display').innerHTML.charAt(document.getElementById('display').innerHTML.length - 8);
-      // console.log(number);
-      // document.getElementById('display').innerHTML = document.getElementById('display').innerHTML.substring(0, document.getElementById('display').innerHTML.length - 13);
-
       var display = document.getElementById('display').innerHTML.split("");
       var digit = display.splice(document.getElementById('display').innerHTML.length - 9, 2);
       document.getElementById('display').innerHTML = document.getElementById('display').innerHTML.substring(0, document.getElementById('display').innerHTML.length - 14);
       number = digit.join("");
-      console.log(number);
-    }
+     }
       document.getElementById('display').innerHTML += number;
     };
   }else{
@@ -126,9 +120,12 @@ function evaluateDisplay(){
       if (Math.trunc(((evaluated) % 1).toFixed(3) / .0625) == 0) {
         console.log("1");
         document.getElementById('display').innerHTML = `${inches}"`;
-      } else {
+      } 
+      if (inches != 0){
         console.log("2");
         document.getElementById('display').innerHTML = `${inches}${fraction}"`;
+      }else{
+        document.getElementById('display').innerHTML = `${fraction}"`;
       }
     } else {
       if (inches == 0) {
@@ -155,8 +152,11 @@ function evaluateDisplay(){
     console.log(evaluated);
       if (fraction == `0`) {
         document.getElementById('display').innerHTML = `${Math.trunc(evaluated)}"`;
-      } else {
+      } 
+      if (Math.trunc(evaluated) != 0) {
         document.getElementById('display').innerHTML = `${Math.trunc(evaluated)}${fraction}"`;
+      }else{
+        document.getElementById('display').innerHTML = `${fraction}"`;
       }
     }
   if(convert == "decimal"){
