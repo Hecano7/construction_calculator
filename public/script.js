@@ -243,6 +243,7 @@ function evaluateDisplay() {
   if (values.length == 3) {
     values = [];
     values.push(`(${evaluated})`);
+    values.push(`${symbol}`);
     console.log(values);
   }
   var fraction = simplify(
@@ -334,23 +335,27 @@ function constructionCalc(x) {
 
     if (x == "symbols") {
       if (values.length == 2) {
-        console.log(values.length);
         if (operator == "hit") {
+          console.log("#1");
           values.splice(1, 1, symbol);
         }
         if (operator == "") {
+          console.log("#2");
           values.push(`(${eval(update)})`);
         }
       }
       if (values.length == 1) {
+        console.log("#3");
         values.push(`${symbol}`);
       }
       if (values.length == 0) {
+        console.log("#4");
         values.push(`(${eval(update)})`);
         values.push(`${symbol}`);
       }
     } else {
       if (values.length != 3) {
+        console.log("#5");
         values.push(`(${eval(update)})`);
       }
     }
