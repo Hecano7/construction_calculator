@@ -8,64 +8,59 @@
   <title>Document</title>
 </head>
 <body>
-  <nav role="navigation">
-    <div id="menuToggle">
-      <!--
-      A fake / hidden checkbox is used as click reciever,
-      so you can use the :checked selector on it.
-      -->
-      <input type="checkbox" />
-      
-      <!--
-      Some spans to act as a hamburger.
-      
-      They are acting like a real hamburger,
-      not that McDonalds stuff.
-      -->
-      <span></span>
-      <span></span>
-      <span></span>
-      
-      <!--
-      Too bad the menu has to be inside of the button
-      but hey, it's pure CSS magic.
-      -->
-      <ul id="menu">
-        <a href="https://construction-calculator.herokuapp.com/"><li>Construction Calculator</li></a>
-        <a href="https://construction-calculator.herokuapp.com/even-spaced"><li>Find Even Spacing</li></a>
-      </ul>
-    </div>
-  </nav>
   <div id="input">
     <div>
-      <p style="grid-row-start: 2;">Inner width of frame.</p>
-      <input onclick="keyboard('Width')" class="inputs" id="Width" value='48"' readonly="readonly"/>
+      <nav role="navigation">
+        <div id="menuToggle">
+          <!--
+          A fake / hidden checkbox is used as click reciever,
+          so you can use the :checked selector on it.
+          -->
+          <input type="checkbox" />
+          
+          <!--
+          Some spans to act as a hamburger.
+          
+          They are acting like a real hamburger,
+          not that McDonalds stuff.
+          -->
+          <span></span>
+          <span></span>
+          <span></span>
+          
+          <!--
+          Too bad the menu has to be inside of the button
+          but hey, it's pure CSS magic.
+          -->
+          <ul id="menu">
+            <a href="https://construction-calculator.herokuapp.com/"><li>Construction Calculator</li></a>
+            <a href="https://construction-calculator.herokuapp.com/even-spaced"><li>Find Even Spacing</li></a>
+          </ul>
+        </div>
+      </nav>
     </div>
-    <div>
+      <p >Inner width of frame.</p>
+      <input onclick="keyboard('Width')" class="inputs" id="Width" value='48"' readonly="readonly"/>
       <div class="Bars"></div>
       <p>Thickness of bars.</p>
       <input onclick="keyboard('Bars')" class="inputs" id="Bars" value='1"' readonly="readonly"/>
-    </div>
-    <div>
       <div class="Spaces"></div>
       <p>Aproximate width in-between the bars.</p>
       <input onclick="keyboard('Spaces')" class="inputs" id="Spaces" value='4"1/2"' readonly="readonly"/>
-    </div>
-    <div>
+ 
       <div class="Frame"></div>
       <p>(Optional) Thickness of the Frame.</p>
       <input onclick="keyboard('Frame')" class="inputs" id="Frame" readonly="readonly"/>
-    </div>
     <div style="  
     border: unset;
     background-color: unset;
     display: flex;
     justify-content: center; 
-    grid-row-start: 2; 
+    grid-row-start: 5; 
     grid-column-start: 1; 
-    grid-column-end: 5;">
+    grid-column-end: 4;">
       <button class="calculate" style="margin-top: 3%;" type="button" onclick="calculate()">Calculate</button>
-    </div>
+    </div>  
   </div>
   <div id='calc-contain' class="disable-dbl-tap-zoom">
       

@@ -8,27 +8,20 @@ body{
 }
 #input{
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
-  grid-template-rows: 75% 25%;
-  height: 55%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+  grid-template-columns: 20% 60% 20%;
+  height: 60%;
   padding: .5em;
-}
-#input > div {
-  display: grid;
-  grid-template-rows: 33% 33% 33%;
-  border-radius: 1em;
+  width: 100%;
   background-color: rgb(242,242,242);
   padding: .3em;
-  border: 1px solid #000000;
 }
 .inputs{
-  width: 95%;
-  height: 50%;
-  margin-left: 2.5%;
-  grid-row-start: 3;
   margin-top: 20%;
+  margin-bottom: 20%;
   box-shadow: 2px 0px 6px black inset;
-}
+  text-align: center;
+} 
 .calculate{
   width: 90%;
   height: 70%;
@@ -40,10 +33,10 @@ body{
   display: inline-block;
   font-size: 25px;
   font-family: sans-serif;
-
 }
 p{
-  margin: 0;
+  padding-top: auto;
+  padding-bottom: auto;
   text-align: center;
 }
 .Bars{
@@ -87,7 +80,8 @@ p{
   background-color: rgb(189, 58, 58);
   border: 1px solid #000000;
   margin: 5%;
-  height: 80%;
+  margin-top: 11%;
+  height: 70%;
   position: absolute;
   justify-content: center;
   width: 90%;
@@ -97,10 +91,11 @@ p{
 .bubble{
   display: -moz-inline-grid;
   position: relative;
-  background-color: rgb(242,242,242);
-  border-radius: 1em;
+  background-image: url("img/Gate-Background.jpg");
   height: 40%;
   border: 1px solid #000000;
+  background-size: cover;
+  background-position: top;
 }
 .disable-dbl-tap-zoom {
   touch-action: manipulation;
@@ -313,7 +308,7 @@ body
 {
   position: absolute;
   width: 300px;
-  height: 10000%;
+  height: 3000%;
   margin: -100px 0 0 -50px;
   padding: 50px;
   padding-top: 125px;
