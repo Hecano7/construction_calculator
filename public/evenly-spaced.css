@@ -79,12 +79,12 @@ p{
   padding: 3.076%;
   background-color: rgb(189, 58, 58);
   border: 1px solid #000000;
-  margin: 5%;
+  margin: 6.5%;
   margin-top: 11%;
-  height: 70%;
+  height: 60%;
   position: absolute;
   justify-content: center;
-  width: 90%;
+  width: 87%;
   /* top: 50%; */
   /* transform: translateY(-50%); */
 }
@@ -92,7 +92,7 @@ p{
   display: -moz-inline-grid;
   position: relative;
   background-image: url("img/Gate-Background.jpg");
-  height: 40%;
+  height: 45%;
   border: 1px solid #000000;
   background-size: cover;
   background-position: top;
