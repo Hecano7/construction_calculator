@@ -3,6 +3,16 @@ var select = ["Width","Bars","Spaces","Frame"];
 var counter = 0;
 var radio = 0;
 
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+
 function keyboard(x) {
   input_field = x;
   var keyboard = document.getElementById("calc-contain");
@@ -50,25 +60,27 @@ function spacedWidth(space){
 
   if (space < 12) {
     if (fraction == "0/16") {
-      alert(`${inches}"`);
+      document.getElementById("results").innerHTML = `Equal spacing in between the bars is ${inches}"`;
     } else {
-      alert(`${inches}"${fraction}"`);
+      document.getElementById("results").innerHTML = `Equal spacing in between the bars is ${inches}"${fraction}"`;
     }
   } else {
     if (inches == 0) {
       if (fraction == "0/16") {
-        alert(`${feet}'`);
+        document.getElementById("results").innerHTML = `Equal spacing in between the bars is ${feet}'`;
       } else {
-        alert(`${feet}'${fraction}"`);
+        document.getElementById("results").innerHTML = `Equal spacing in between the bars is ${feet}'${fraction}"`;
       }
     } else {
       if (fraction == "0/16") {
-        alert(`${feet}'${inches}"`);
+        document.getElementById("results").innerHTML = `Equal spacing in between the bars is ${feet}'${inches}"`;
       } else {
-        alert(`${feet}'${inches}"${fraction}"`);
+        document.getElementById("results").innerHTML = `Equal spacing in between the bars is ${feet}'${inches}"${fraction}"`;
       }
     }
   }
+  modal.style.display = "block";
+
   prompt();
 };
 
@@ -151,6 +163,7 @@ function calculate(x){
   console.log(input2);
   console.log(space);
   spacedWidth(space);
+
 }
 
 function trigger(){
@@ -182,5 +195,17 @@ function prompt(text,listings){
   }
   if(listings){
     document.getElementById("listings").style.display = "block";
+  }
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
 }

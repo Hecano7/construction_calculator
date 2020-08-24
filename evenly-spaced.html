@@ -8,8 +8,7 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="input">
-    <div>
+    <div id="input">
       <nav role="navigation">
         <div id="menuToggle">
           <!--
@@ -38,7 +37,6 @@
           </ul>
         </div>
       </nav>
-    </div>
       <p >Inner width of frame.</p>
       <input onclick="keyboard('Width')" class="inputs" id="Width" value='48"' readonly="readonly"/>
       <div class="Bars"></div>
@@ -59,9 +57,20 @@
     grid-row-start: 5; 
     grid-column-start: 1; 
     grid-column-end: 4;">
-      <button class="calculate" style="margin-top: 3%;" type="button" onclick="calculate()">Calculate</button>
+      <button id="myBtn" class="calculate" style="margin-top: 3%;" type="button" onclick="calculate()">Calculate</button>
     </div>  
   </div>
+
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p id="results">Some text in the Modal..</p>
+    </div>
+  
+  </div>
+
   <div id='calc-contain' class="disable-dbl-tap-zoom">
       
       <div class="calculator-keys">
